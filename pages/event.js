@@ -190,6 +190,33 @@ export default function events(pageProp) {
 
     // console.log("allnew ", alnews)
 
+    // const [cards,setCards] = useState([]);
+
+    // const fetchAllNews = async (page = 1) => {
+    //     try {
+    //         const resp = await fetch(`https://admin.kmiroofing.com/api/get-event`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             }
+    //         });
+
+    //         if (resp.status === 200) {
+    //             const formateddata = await resp.json();
+    //             setCards(formateddata?.events);
+    //             // setTotalPages(Math.ceil(formateddata?.news?.length / itemsPerPage)); // Calculate total pages
+    //         }
+    //     } catch (error) {
+    //         console.error("There was an error fetching the news:", error);
+    //     }
+    // };
+
+    // useEffect(()=>{
+    //   fetchAllNews();
+    // },[])
+
+
+
     return (
         <div className="page_shopping_list sop">
             <HeadSEO title={product?.seo?.pageTitle == "" ? product?.name : product?.seo?.pageTitle} description={product?.seo?.metaDescription} image={null} />
