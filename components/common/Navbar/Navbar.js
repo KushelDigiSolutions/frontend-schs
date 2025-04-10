@@ -583,7 +583,7 @@ export default function Navbar(props) {
             </div> */}
             <ul className="scchs_nav_ul">
               <div className="scchs_logo">
-                <img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" />
+              <Link href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></Link>
               </div>
               <div className="schss_parent" onClick={handleDropdownToggle} ref={dropdownRef}>
                 <li className="dev_svg">
@@ -667,7 +667,7 @@ export default function Navbar(props) {
                   </div>
                 }
               </div>
-              <li><a>events</a></li>
+              <li><Link  href="/event">events</Link></li>
               <div onClick={handleDropdownToggle6} ref={dropdownRef6} className="schss_parent">
                 <li className="dev_svg">
                   <a>store</a>
