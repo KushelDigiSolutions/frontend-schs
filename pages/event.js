@@ -280,9 +280,9 @@ export default function events(pageProp) {
                                 <div className="card-content">
                                     <h3>{card.title}</h3>
                                     <p>{card.description}</p>
-                                    <button className="info-btn">
+                                   <Link href="/eventdetail"><button className="info-btn">
                                         More Info <span className="arrow-icon"></span>
-                                    </button>
+                                    </button></Link>
                                 </div>
                             </div>
                         ))}

@@ -583,7 +583,7 @@ export default function Navbar(props) {
             </div> */}
             <ul className="scchs_nav_ul">
               <div className="scchs_logo">
-              <Link href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></Link>
+                <Link href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></Link>
               </div>
               <div className="schss_parent" onClick={handleDropdownToggle} ref={dropdownRef}>
                 <li className="dev_svg">
@@ -667,7 +667,7 @@ export default function Navbar(props) {
                   </div>
                 }
               </div>
-              <li><Link  href="/event">events</Link></li>
+              <li><Link href="/event">events</Link></li>
               <div onClick={handleDropdownToggle6} ref={dropdownRef6} className="schss_parent">
                 <li className="dev_svg">
                   <a>store</a>
@@ -705,9 +705,8 @@ export default function Navbar(props) {
           </div>
 
           <ul className={`nav-list ${mobileOpen ? "open" : ""}`}>
-            <div style={{width:"100%"}} className="schss_parent">
-              {/* Only this button toggles */}
-              <li  className="dev_svg nav-item" onClick={handleToggle} ref={buttonRef}>
+            {/* <div style={{ width: "100%" }} className="schss_parent">
+              <li className="dev_svg nav-item" onClick={handleToggle} ref={buttonRef}>
                 <a>Members only</a>
                 {isOpen && (
                   <svg
@@ -725,7 +724,6 @@ export default function Navbar(props) {
                 )}
               </li>
 
-              {/* Dropdown appears separately, not wrapped in toggle */}
               {isOpen && (
                 <div ref={dropdownRef11} className="test_drop1">
                   <div><p>Membership List</p></div>
@@ -764,7 +762,7 @@ export default function Navbar(props) {
                   </span>
                 </div>
               )}
-            </div>
+            </div> */}
             <li className="nav-item">
               <a>Archives</a>
             </li>
