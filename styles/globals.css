@@ -5230,7 +5230,10 @@ justify-content: center !important;
   border-radius: 4px;
   cursor: pointer;
 }
-
+.search-button:hover{
+  background-color: rgba(0, 49, 92, 1);
+  transition: .3s;
+}
 .filters-right {
   display: flex;
   align-items: center;
@@ -5892,9 +5895,11 @@ justify-content: center !important;
   margin-top: 100px;
 }
 .scch-table-container {
-  /* padding: 24px; */
+  background-color: rgba(255, 255, 255, 1);
   overflow-x: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 95%;
+  display: block;
+  margin: auto;
 }
 
 .scch-member-table {
@@ -5904,38 +5909,187 @@ justify-content: center !important;
   border-left: none;
   border-right: none;
 }
-
+.scch-member-table thead tr{
+  height: 70px;
+}
+.scch-member-table thead tr th{
+  color: rgba(8, 13, 23, 1);
+  font-size: 18px;
+  font-family: "Euclid-Regular";
+  font-weight: 400;
+}
 .scch-member-table thead th {
-  background-color: #f4f6f8;
+  background-color: rgba(0, 49, 92, 0.05);
   color: #000;
   padding: 14px 16px;
   text-align: left;
   font-size: 16px;
-  font-weight: 600;
-  border: 1px solid #d1d1d1;
+  /* font-weight: 600; */
+  /* border: 1px solid #d1d1d1; */
 }
 
 .scch-member-table tbody td {
-  padding: 12px 16px;
+  padding: 24px 16px;
   font-size: 15px;
-  color: #000;
-  border: 1px solid #d1d1d1;
+  color: rgba(8, 13, 23, 1);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   vertical-align: top;
   word-wrap: break-word;
+  font-family: "Euclid-Light";
 }
-
+.nh1{
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
 /* Remove left border from first column */
 .scch-member-table td:first-child,
 .scch-member-table th:first-child {
   border-left: none;
+  /* border-top: none; */
+  /* border-bottom: none; */
 }
-
 /* Remove right border from last column */
 .scch-member-table td:last-child,
 .scch-member-table th:last-child {
   border-right: none;
+  /* border-top: none; */
+  /* border-bottom: none; */
+}
+.memberList_filter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 18px;
+}
+.memberlist-title-filter{
+  margin-top: 0px;
+}
+.mem-record-info{
+  text-align: right;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.page-btn {
+  padding: 3px 12px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(171, 6, 53, 0.6);
+  opacity: 60%;
+  background-color: white;
+  color: rgba(171, 6, 53, 1);
+  font-size: 13px;
+  cursor: pointer;
+  min-width: 30px;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  border: 1.5px solid rgba(171, 6, 53, 0.6);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  
+  cursor: not-allowed;
+}
+
+.page-btn.active {
+  border: 1.5px solid rgba(171, 6, 53, 1);
+  background: transparent !important;
+  color: rgba(171, 6, 53, 1);
+  font-size: 13px;
+  font-family: "Euclid-Medium";
+  opacity: 100%;
+}
+
+.next-btn {
+  margin-left: 0px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  color: rgba(102, 109, 118, 1);
+  font-size: 13px;
+  font-family: "Euclid-Regular";
+  padding: 3px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* ============my profile css start================= */
+.event_system_main2{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.membership-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.info-section1{
+  width: 25%;
+}
+.info-section2{
+  width: 25%;
+}
+.info-section3{
+  width: 50%;
+}
+.section-header {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f2f4f7;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 40px;
+  /* flex-wrap: wrap; */
+}
+
+
+
+.info-header {
+  background-color: #002c5f;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+}
+
+.info-card {
+  border: 1px solid #d1d5db;
+  /* border-top: none; */
+  padding: 1rem;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: white;
+  width: 100%;
+}
+.info-card p{
+ display: flex;
+ /* align-items: center; */
+ justify-content: space-between;
+ /* gap: 40px; */
+}
+/* =============my profile css end================= */
 /* ===============================member login end======================== */
 
 /* Responsive */

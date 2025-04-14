@@ -250,7 +250,7 @@ export default function events(pageProp) {
                                 <span className="for-label">FOR:</span>
                                 <input type="text" className="search-input" />
                                 <button className="search-button">
-                                    <img width="28" src="https://res.cloudinary.com/dgif730br/image/upload/v1744279927/Mask_group_zicocm.png" alt="this is search image"/>
+                                    <img width="28" src="https://res.cloudinary.com/dgif730br/image/upload/v1744279927/Mask_group_zicocm.png" alt="this is search image" />
                                 </button>
                             </div>
                         </div>
@@ -259,9 +259,9 @@ export default function events(pageProp) {
                             <div className="listing">
                                 <label>Listing Per Page</label>
                                 <div className="custom_drop custom_drop1">
-                                <select className="dropdown small">
-                                    <option>50</option>
-                                </select>
+                                    <select className="dropdown small">
+                                        <option>50</option>
+                                    </select>
                                 </div>
                             </div>
                             <div className="record-info">
@@ -280,7 +280,7 @@ export default function events(pageProp) {
                                 <div className="card-content">
                                     <h3>{card.title}</h3>
                                     <p>{card.description}</p>
-                                   <Link href="/eventdetail"><button className="info-btn">
+                                    <Link href="/eventdetail"><button className="info-btn">
                                         More Info <span className="arrow-icon"></span>
                                     </button></Link>
                                 </div>
