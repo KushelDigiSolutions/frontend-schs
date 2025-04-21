@@ -507,7 +507,7 @@ export default function Navbar(props) {
                 {/* Dropdown appears separately, not wrapped in toggle */}
                 {isOpen && (
                   <div ref={dropdownRef11} className="test_drop1">
-                    <div><p>Membership List</p></div>
+                   <a href="/member/memberlist"><div><p>Membership List</p></div></a>
                     <div onClick={handleDropdownToggle7} ref={dropdownRef7} className="tyino">
                       <p>SCCHS Publications Archives</p>
                       {isDropdownOpen7 &&
@@ -535,11 +535,11 @@ export default function Navbar(props) {
                         </span>
                       }
                     </div>
-                    <div><p>My Profile</p></div>
+                   <a href="/member/myprofile"><div><p>My Profile</p></div></a>
                     <div className="logout"><p>Logout</p></div>
                     <span>
-                      <div><p>Research</p></div>
-                      <div><p>Cemetery Records</p></div>
+                     <a href="/research"><div><p>Research</p></div></a>
+                     <a href="/cementry"><div><p>Cemetery Records</p></div></a>
                     </span>
                   </div>
                 )}
@@ -554,10 +554,10 @@ export default function Navbar(props) {
                 <a>surname lookup</a>
               </li>
               <li>
-                <a>our business friends</a>
+                <Link href="/our-business-freind">our business friends</Link>
               </li>
               <li>
-                <a>Contact us</a>
+                <Link href="/contact-us">Contact us</Link>
               </li>
               <div className="scchs_searchbar">
                 <form>
@@ -583,11 +583,11 @@ export default function Navbar(props) {
             </div> */}
             <ul className="scchs_nav_ul">
               <div className="scchs_logo">
-                <Link href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></Link>
+                <a href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></a>
               </div>
               <div className="schss_parent" onClick={handleDropdownToggle} ref={dropdownRef}>
                 <li className="dev_svg">
-                  <a>About us</a>
+                  <Link href="/about-us">About us</Link>
                   {isDropdownOpen &&
                     <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
@@ -596,15 +596,15 @@ export default function Navbar(props) {
                 </li>
                 {isDropdownOpen &&
                   <div className="test_drop">
-                    <div><p>History of SCCHS</p></div>
-                    <div><p>History of Our Building</p></div>
-                    <div><p>History of Our County</p></div>
+                   <a href="/history-of-scchs"><div><p>History of SCCHS</p></div></a>
+                   <a href="/history-of-0ur-building"><div><p>History of Our Building</p></div></a>
+                   <a href="/history-of-our-country"><div><p>History of Our County</p></div></a>
                   </div>
                 }
               </div>
               <div onClick={handleDropdownToggle2} ref={dropdownRef2} className="schss_parent">
                 <li className="dev_svg">
-                  <a>Research</a>
+                  <Link href="/research-1">Research</Link>
                   {isDropdownOpen2 &&
                     <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
@@ -612,15 +612,15 @@ export default function Navbar(props) {
                 </li>
                 {isDropdownOpen2 &&
                   <div className="test_drop">
-                    <div><p>Workshop Handouts</p></div>
-                    <div><p>External Research Site Links</p></div>
-                    <div><p>The TNT Story: Cemeteries</p></div>
+                   <a href="/workshop-buttons"><div><p>Workshop Handouts</p></div></a>
+                   <a href="/extrnal-research-links"><div><p>External Research Site Links</p></div></a>
+                   <a href="/cemetry-virtual-tour"><div><p>The TNT Story: Cemeteries</p></div></a>
                   </div>
                 }
               </div>
               <div onClick={handleDropdownToggle3} ref={dropdownRef3} className="schss_parent">
                 <li className="dev_svg">
-                  <a>join us</a>
+                  <Link href="/join-us">join us</Link>
                   {isDropdownOpen3 &&
                     <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
@@ -631,7 +631,7 @@ export default function Navbar(props) {
                   isDropdownOpen3 &&
                   <div className="test_drop">
                     <div><p>Membership Information</p></div>
-                    <div><p>Online Join</p></div>
+                    <a href="/join/register1"><div><p>Online Join</p></div></a>
                   </div>
                 }
               </div>
@@ -685,7 +685,7 @@ export default function Navbar(props) {
                 }
               </div>
               <li className="test_sign">
-                <button>SIGN in</button>
+              <Link href="/member/memberlogin"><button>SIGN in</button></Link>
               </li>
             </ul>
           </div >
@@ -773,7 +773,7 @@ export default function Navbar(props) {
               <a>surname lookup</a>
             </li>
             <li className="nav-item">
-              <a>our business friends</a>
+              <Link href="/our-business-freind">our business friends</Link>
             </li>
             <li className="nav-item">
               <a>Contact us</a>

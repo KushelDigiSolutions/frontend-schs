@@ -2,11 +2,11 @@
 const nextConfig = {
   env: {
     NEXTAUTH_SECRET:"Instacertify",
-    NEXTAUTH_URL:"https://scchs-frontend.vercel.app/",
+    NEXTAUTH_URL:"https://front.kmiroofing.com/",
     next:{
-      api_url:"https://scchs-frontend.vercel.app/api/v1/"
+      api_url:"https://front.kmiroofing.com/api/v1/"
     },
-    
+    // "proxy": "https://admin.instacertify.com",
     server : {
 		path:"https://admin.kmiroofing.com/",
    		api:"https://admin.kmiroofing.com/api/",
