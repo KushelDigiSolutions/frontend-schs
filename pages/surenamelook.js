@@ -18,28 +18,28 @@ var settingsMorePhotos = {
 };
 
 const records = [
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
-    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com',stage:"MO",country1:"USA",begin:"1801",end:"1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
+    { surename: 'Almeling, Dan and Christy', country: 'd56da@aol.com', stage: "MO", country1: "USA", begin: "1801", end: "1899" },
     // Add more for testing pagination
 ];
 
 const itemsPerPage = 10;
 
 export default function surenamelook(pageProp) {
-  const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(records.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -49,6 +49,29 @@ export default function surenamelook(pageProp) {
         if (page >= 1 && page <= totalPages) {
             setCurrentPage(page);
         }
+    };
+
+
+    const [openIndex, setOpenIndex] = useState(null);
+    const dropdownRefs = useRef([]);
+
+    const handleOutsideClick = (event) => {
+        if (
+            dropdownRefs.current.every(
+                (ref) => ref && !ref.contains(event.target)
+            )
+        ) {
+            setOpenIndex(null);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => document.removeEventListener('mousedown', handleOutsideClick);
+    }, []);
+
+    const toggleDropdown = (index) => {
+        setOpenIndex((prev) => (prev === index ? null : index));
     };
 
 
@@ -100,8 +123,8 @@ export default function surenamelook(pageProp) {
                     </div>
 
                     <div className="memberList_filter" >
-                        <div className="event-title-filter memberlist-title-filter">
-                            <input type="text" className="search-input" placeholder="Search Surname" />
+                        <div className="event-title-filter memberlist-title-filter tyile_filter">
+                            <input type="text" className="search-input serach_inpp" placeholder="Search Surname" />
                             <button className="search-button">
                                 <img width="28" src="https://res.cloudinary.com/dgif730br/image/upload/v1744279927/Mask_group_zicocm.png" alt="this is search image" />
                             </button>
@@ -169,7 +192,21 @@ export default function surenamelook(pageProp) {
                                         <td>
                                             {item?.end}
                                         </td>
-                                        <td>hi</td>
+                                        <td ref={(el) => (dropdownRefs.current[idx] = el)} className="action-col">
+                                            <button onClick={() => toggleDropdown(idx)} className="action-btn">
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0.5 4C0.5 2.067 2.067 0.5 4 0.5H28C29.933 0.5 31.5 2.067 31.5 4V28C31.5 29.933 29.933 31.5 28 31.5H4C2.067 31.5 0.5 29.933 0.5 28V4Z" stroke="#AB0635" />
+                                                    <path d="M16 14C14.9 14 14 14.9 14 16C14 17.1 14.9 18 16 18C17.1 18 18 17.1 18 16C18 14.9 17.1 14 16 14ZM16 8C14.9 8 14 8.9 14 10C14 11.1 14.9 12 16 12C17.1 12 18 11.1 18 10C18 8.9 17.1 8 16 8ZM16 20C14.9 20 14 20.9 14 22C14 23.1 14.9 24 16 24C17.1 24 18 23.1 18 22C18 20.9 17.1 20 16 20Z" fill="#49515C" />
+                                                </svg>
+
+                                            </button>
+                                            {openIndex === idx && (
+                                                <div className="action-dropdown">
+                                                    <div>View</div>
+                                                    <div>Mail</div>
+                                                </div>
+                                            )}
+                                        </td>
                                     </tr>
                                 ))}
                                 {/* <tr>
@@ -238,7 +275,7 @@ export default function surenamelook(pageProp) {
                             onClick={() => handleClick(currentPage + 1)}
                             disabled={currentPage === totalPages}
                         >
-                           <span>Next</span> 
+                            <span>Next</span>
                             <svg width="6" height="12" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.13115 0.5L0.368652 2.2625L6.09365 8L0.368652 13.7375L2.13115 15.5L9.63115 8L2.13115 0.5Z" fill="#666D76" />
                             </svg>

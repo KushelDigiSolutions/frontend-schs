@@ -31,7 +31,7 @@ export default function memberlogin(pageProp) {
                 <div className="scchs-login-card">
                     <p className="scchs-info-text">
                         If you are a member, please enter your login information below. If you are not a member, and would like more information about becoming one, please{" "}
-                        <span className="scchs-click-here">CLICK HERE.</span>
+                       <Link href="/join/register1"><span className="scchs-click-here">CLICK HERE.</span></Link>
                     </p>
                     <h2 className="scchs-login-title">Sign in</h2>
 
