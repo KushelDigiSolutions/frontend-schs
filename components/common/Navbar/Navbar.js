@@ -545,13 +545,13 @@ export default function Navbar(props) {
                 )}
               </div>
               <li>
-                <a>Archives</a>
+                <Link href={"/archieve"}>Archives</Link>
               </li>
               <li>
                 <a>photos</a>
               </li>
               <li>
-                <a>surname lookup</a>
+                <Link href="/surenamelook">surname lookup</Link>
               </li>
               <li>
                 <Link href="/our-business-freind">our business friends</Link>
