@@ -404,28 +404,84 @@ export default function Navbar(props) {
     const navItems = [
       {
         title: "About us",
-        dropdown: ["History of SCCHS", "History of Our Building", "History of Our County"]
+        link: "/about-us",
+        // dropdown: ["History of SCCHS", "History of Our Building", "History of Our County"]
+        dropdown: [
+          {
+            title: "History of SCCHS",
+            link: "/history-of-scchs"
+          },
+          {
+            title: "History of Our Building",
+            link: "/history-of-our-building"
+          },
+          {
+            title: "History of Our County",
+            link: "/history-of-our-country"
+          }
+        ]
       },
       {
         title: "Research",
-        dropdown: ["Workshop Handouts", "External Research Site Links", "The TNT Story: Cemeteries"]
+        link: "/research-1",
+        // dropdown: ["Workshop Handouts", "External Research Site Links", "The TNT Story: Cemeteries"]
+        dropdown: [
+          {
+            title: "Workshop Handouts",
+            link: "/workshop-buttons"
+          },
+          {
+            title: "External Research Site Links",
+            link: "/extrnal-research-links"
+          },
+          {
+            title: "The TNT Story: Cemeteries",
+            link: "/cemetry-virtual-tour "
+          }
+        ]
       },
       {
         title: "Join us",
-        dropdown: ["Membership Information", "Online Join"]
+        link: "/join-us",
+        // dropdown: ["Membership Information", "Online Join"]
+        dropdown: [
+          {
+            title: "Membership Information",
+            link: "/membership-information-join-us"
+          },
+          {
+            title: "Online Join",
+            link: "/join/register1"
+          }
+        ]
       },
       {
         title: "Get Involved",
-        dropdown: ["Volunteers and Interns"]
+        dropdown: [{
+            title:"Volunteers and Interns",
+            link:"/volunteer-and-interns"
+        }]
+        // dropdown: ["Volunteers and Interns"]
       },
       {
         title: "Support us",
-        dropdown: ["Donations", "Planned Giving"]
+        link: '/support-us',
+        // dropdown: ["Donations", "Planned Giving"]
+        dropdown:[
+          {
+            title:"Donations",
+            link:"/support/donation"
+          },
+          {
+            title:"Planned Giving",
+            link:"/planed-giving"
+          }
+        ]
       },
-      { title: "Events" },
+      { title: "Events", link: "/event" },
       {
-        title: "Store",
-        dropdown: ["Store1", "Store2"]
+        title: "Store", link: "/store"
+        // dropdown: ["Store1", "Store2"]
       }
     ];
 
@@ -507,7 +563,7 @@ export default function Navbar(props) {
                 {/* Dropdown appears separately, not wrapped in toggle */}
                 {isOpen && (
                   <div ref={dropdownRef11} className="test_drop1">
-                   <a href="/member/memberlist"><div><p>Membership List</p></div></a>
+                    <a href="/member/memberlist"><div><p>Membership List</p></div></a>
                     <div onClick={handleDropdownToggle7} ref={dropdownRef7} className="tyino">
                       <p>SCCHS Publications Archives</p>
                       {isDropdownOpen7 &&
@@ -535,11 +591,11 @@ export default function Navbar(props) {
                         </span>
                       }
                     </div>
-                   <a href="/member/myprofile"><div><p>My Profile</p></div></a>
+                    <a href="/member/myprofile"><div><p>My Profile</p></div></a>
                     <div className="logout"><p>Logout</p></div>
                     <span>
-                     <a href="/research"><div><p>Research</p></div></a>
-                     <a href="/cementry"><div><p>Cemetery Records</p></div></a>
+                      <a href="/research"><div><p>Research</p></div></a>
+                      <a href="/cementry"><div><p>Cemetery Records</p></div></a>
                     </span>
                   </div>
                 )}
@@ -548,7 +604,7 @@ export default function Navbar(props) {
                 <Link href={"/archieve"}>Archives</Link>
               </li>
               <li>
-                <a>photos</a>
+                <Link href={"/photos/mainhome"}>photos</Link>
               </li>
               <li>
                 <Link href="/surenamelook">surname lookup</Link>
@@ -596,9 +652,9 @@ export default function Navbar(props) {
                 </li>
                 {isDropdownOpen &&
                   <div className="test_drop">
-                   <a href="/history-of-scchs"><div><p>History of SCCHS</p></div></a>
-                   <a href="/history-of-0ur-building"><div><p>History of Our Building</p></div></a>
-                   <a href="/history-of-our-country"><div><p>History of Our County</p></div></a>
+                    <a href="/history-of-scchs"><div><p>History of SCCHS</p></div></a>
+                    <a href="/history-of-0ur-building"><div><p>History of Our Building</p></div></a>
+                    <a href="/history-of-our-country"><div><p>History of Our County</p></div></a>
                   </div>
                 }
               </div>
@@ -612,9 +668,9 @@ export default function Navbar(props) {
                 </li>
                 {isDropdownOpen2 &&
                   <div className="test_drop">
-                   <a href="/workshop-buttons"><div><p>Workshop Handouts</p></div></a>
-                   <a href="/extrnal-research-links"><div><p>External Research Site Links</p></div></a>
-                   <a href="/cemetry-virtual-tour"><div><p>The TNT Story: Cemeteries</p></div></a>
+                    <a href="/workshop-buttons"><div><p>Workshop Handouts</p></div></a>
+                    <a href="/extrnal-research-links"><div><p>External Research Site Links</p></div></a>
+                    <a href="/cemetry-virtual-tour"><div><p>The TNT Story: Cemeteries</p></div></a>
                   </div>
                 }
               </div>
@@ -646,13 +702,13 @@ export default function Navbar(props) {
                 </li>
                 {isDropdownOpen4 &&
                   <div className="test_drop">
-                    <div><p>Volunteers and Interns</p></div>
+                    <a href="/volunteer-and-interns"><div><p>Volunteers and Interns</p></div></a>
                   </div>
                 }
               </div>
               <div onClick={handleDropdownToggle5} ref={dropdownRef5} className="schss_parent">
                 <li className="dev_svg">
-                  <a>support us</a>
+                  <Link href="/support-us">support us</Link>
                   {isDropdownOpen5 &&
                     <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
@@ -662,7 +718,7 @@ export default function Navbar(props) {
                 {
                   isDropdownOpen5 &&
                   <div className="test_drop">
-                    <div><p>Donations</p></div>
+                   <a href="/support/donation"><div><p>Donations</p></div></a>
                     <div><p>Planned Giving</p></div>
                   </div>
                 }
@@ -670,22 +726,22 @@ export default function Navbar(props) {
               <li><Link href="/event">events</Link></li>
               <div onClick={handleDropdownToggle6} ref={dropdownRef6} className="schss_parent">
                 <li className="dev_svg">
-                  <a>store</a>
-                  {isDropdownOpen6 &&
+                  <Link href={"/store"}>store</Link>
+                  {/* {isDropdownOpen6 &&
                     <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
                     </svg>
-                  }
+                  } */}
                 </li>
-                {isDropdownOpen6 &&
+                {/* {isDropdownOpen6 &&
                   <div className="test_drop">
                     <div><p>store1</p></div>
                     <div><p>store2</p></div>
                   </div>
-                }
+                } */}
               </div>
               <li className="test_sign">
-              <Link href="/member/memberlogin"><button>SIGN in</button></Link>
+                <Link href="/member/memberlogin"><button>SIGN in</button></Link>
               </li>
             </ul>
           </div >
@@ -694,11 +750,11 @@ export default function Navbar(props) {
         {/* ==========mobile========== */}
         <div className="navbar-wrapper" ref={navRef}>
           <div className="logo-and-toggle">
-            <img
+            <a href="/"><img
               className="logo"
               src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg"
               alt="Logo"
-            />
+            /></a>
             <button className="hamburger" onClick={() => setMobileOpen(!mobileOpen)}>
               ☰
             </button>
@@ -764,19 +820,19 @@ export default function Navbar(props) {
               )}
             </div> */}
             <li className="nav-item">
-              <a>Archives</a>
+              <a href="/archieve">Archives</a>
             </li>
             <li className="nav-item">
-              <a>photos</a>
+              <a href="/photos/mainhome">photos</a>
             </li>
             <li className="nav-item">
-              <a>surname lookup</a>
+              <a href="/surenamelook">surname lookup</a>
             </li>
             <li className="nav-item">
-              <Link href="/our-business-freind">our business friends</Link>
+              <a href="/our-business-freind">our business friends</a>
             </li>
             <li className="nav-item">
-              <a>Contact us</a>
+              <a href="/contact-us">Contact us</a>
             </li>
             <div className="scchs_searchbar nav-item">
               <form>
@@ -798,13 +854,13 @@ export default function Navbar(props) {
                 }
               >
                 <span className="nav-title">
-                  {item.title}
+                  <a href={item.link}>{item.title}</a>
                   {item.dropdown && <span className="arrow">▼</span>}
                 </span>
                 {item.dropdown && activeDropdown === index && (
                   <ul className="dropdown">
                     {item.dropdown.map((subItem, idx) => (
-                      <li key={idx} className="dropdown-item">{subItem}</li>
+                      <a href={subItem?.link}><li key={idx} className="dropdown-item">{subItem?.title}</li></a>
                     ))}
                   </ul>
                 )}

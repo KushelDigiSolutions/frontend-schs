@@ -168,7 +168,7 @@ export default function surenamelook(pageProp) {
                                 <tr>
                                     <th className="nh1">Surname</th>
                                     <th className="nh1">Country</th>
-                                    <th>Stage/Prov./Rgn.</th>
+                                    <th>Stage/Prov./Rgn</th>
                                     <th>Country</th>
                                     <th>Begin Year</th>
                                     <th>End Year</th>
@@ -181,7 +181,7 @@ export default function surenamelook(pageProp) {
                                         <td>{item.surename}</td>
                                         <td>{item.country}</td>
                                         <td>
-                                            {item?.stage}
+                                            <p> {item?.stage}</p>
                                         </td>
                                         <td>
                                             {item?.country1}
@@ -202,8 +202,14 @@ export default function surenamelook(pageProp) {
                                             </button>
                                             {openIndex === idx && (
                                                 <div className="action-dropdown">
-                                                    <div>View</div>
-                                                    <div>Mail</div>
+                                                   <Link style={{textDecoration:"none"}} href={"/surenamedetail"}><div className="act_btn">
+                                                        <img width={18} height={18} src="https://res.cloudinary.com/dgif730br/image/upload/v1745394773/Mask_group_1_u2msed.svg" />
+                                                       <p>View</p>
+                                                    </div></Link>
+                                                    <div className="act_btn">
+                                                        <img width={18} height={18} src="https://res.cloudinary.com/dgif730br/image/upload/v1745394773/Mask_group_3_zsyixz.svg" />
+                                                        <p>Mail</p>
+                                                    </div>
                                                 </div>
                                             )}
                                         </td>

@@ -28,11 +28,11 @@ const data = {
     beginYear: "1801",
     endYear: "1960",
     alternateSpellings: "Alfermann",
-  };
+};
 
 export default function surenamelook(pageProp) {
-   
-   
+
+
 
     return (
         <div className="page_shopping_list sop">
@@ -42,6 +42,10 @@ export default function surenamelook(pageProp) {
 
             <div className="event_system_main event_system_main1">
                 <div className="event_main">
+                    <div className="surname-btn-group">
+                        <button className="btn-primary">Print</button>
+                       <Link href={"/surenamelook"}><button className="btn-outline">Back</button></Link>
+                    </div>
                     <div className="surname-details-wrapper">
                         <div className="surname-details-grid">
                             <div>Surname</div>
@@ -69,10 +73,7 @@ export default function surenamelook(pageProp) {
                             <div>: <strong><a href="#">{data.alternateSpellings}</a></strong></div>
                         </div>
 
-                        <div className="surname-btn-group">
-                            <button className="btn-primary">Print</button>
-                            <button className="btn-outline">Back</button>
-                        </div>
+
                     </div>
                 </div>
             </div>
