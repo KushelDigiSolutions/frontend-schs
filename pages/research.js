@@ -163,7 +163,7 @@ export default function research(pageProp) {
                             ))}
 
                             <button
-                                className="page-btn next-btn"
+                                className="page-btn next-btn1"
                                 onClick={() => handleClick(currentPage + 1)}
                                 disabled={currentPage === totalPages}
                             >

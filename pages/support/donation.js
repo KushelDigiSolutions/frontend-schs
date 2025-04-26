@@ -88,7 +88,7 @@ export default function donation(pageProp) {
                         We are a 501(c)(3) non-profit organization and welcome your donations.
                     </strong>
                 </p>
-                <div className="box">
+                <div className="box_1">
                     <p className="box-paragraph">You may make an online donation.</p>
                     <a href="#">Click Here</a>
                 </div>

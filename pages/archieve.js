@@ -17,9 +17,86 @@ var settingsMorePhotos = {
     slidesToScroll: 1
 };
 
+const records = [
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    }
+];
+
+const itemsPerPage = 3;
 export default function archieve(pageProp) {
 
+ const [currentPage, setCurrentPage] = useState(1);
 
+    const totalPages = Math.ceil(records.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentItems = records.slice(startIndex, startIndex + itemsPerPage);
+
+    const handleClick = (page) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
 
     return (
         <div className="page_shopping_list sop">
@@ -52,33 +129,46 @@ export default function archieve(pageProp) {
                 </div>
                 <div className="event_main">
                     <div className="ks-page">
-                        <div className="ks-result-card">
-                            <div className="ks-result-text">
-                                <h3 className="ks-result-title">600.001.587 - Map</h3>
-                                <p className="ks-result-desc">Map of Missouri counties</p>
-                                <p className="ks-record-type"><strong>Record Type:</strong> Archive</p>
-                                <button className="ks-more-button">Know More</button>
-                            </div>
-                            <div className="ks-result-image-placeholder"></div>
-                        </div>
-                        <div className="ks-result-card">
-                            <div className="ks-result-text">
-                                <h3 className="ks-result-title">600.001.587 - Map</h3>
-                                <p className="ks-result-desc">Map of Missouri counties</p>
-                                <p className="ks-record-type"><strong>Record Type:</strong> Archive</p>
-                                <button className="ks-more-button">Know More</button>
-                            </div>
-                            <div className="ks-result-image-placeholder"></div>
-                        </div>
-                        <div className="ks-result-card">
-                            <div className="ks-result-text">
-                                <h3 className="ks-result-title">600.001.587 - Map</h3>
-                                <p className="ks-result-desc">Map of Missouri counties</p>
-                                <p className="ks-record-type"><strong>Record Type:</strong> Archive</p>
-                                <button className="ks-more-button">Know More</button>
-                            </div>
-                            <div className="ks-result-image-placeholder"></div>
-                        </div>
+                        {
+                            currentItems.map((item, idx) => {
+                                return (
+                                    <div key={idx} className="ks-result-card">
+                                        <div className="ks-result-text">
+                                            <h3 className="ks-result-title">{item?.title}</h3>
+                                            <p className="ks-result-desc">{item?.description}</p>
+                                            <p className="ks-record-type"><strong>Record Type:</strong>{item?.recordType}</p>
+                                            <button className="ks-more-button">{item?.buttonText}</button>
+                                        </div>
+                                        <div className="ks-result-image-placeholder">{item?.imagePlaceholder}</div>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </div>
+
+                    <div className="custom-pagination">
+                        {[...Array(totalPages)].map((_, i) => (
+                            <button
+                                key={i}
+                                className={`page-btn ${currentPage === i + 1 ? 'active' : ''}`}
+                                onClick={() => handleClick(i + 1)}
+                            >
+                                {i + 1}
+                            </button>
+                        ))}
+
+                        <button
+                            className="page-btn next-btn1"
+                            onClick={() => handleClick(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                        >
+                           <span>Next</span> 
+                            <svg width="6" height="12" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.13115 0.5L0.368652 2.2625L6.09365 8L0.368652 13.7375L2.13115 15.5L9.63115 8L2.13115 0.5Z" fill="#666D76" />
+                            </svg>
+
+                        </button>
                     </div>
                 </div>
             </div>

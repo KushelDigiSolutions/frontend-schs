@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import style from "../../../pages/css/header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+
 import GlobalArrowDown from "../svg/global/arrowDown";
 import GlobalAccount from "../svg/global/account";
 import GlobalVerified from "../svg/global/verified";
@@ -401,7 +402,7 @@ export default function Navbar(props) {
 
 
 
-    const navItems = [
+    const navItemss = [
       {
         title: "About us",
         link: "/about-us",
@@ -458,8 +459,8 @@ export default function Navbar(props) {
       {
         title: "Get Involved",
         dropdown: [{
-            title:"Volunteers and Interns",
-            link:"/volunteer-and-interns"
+          title: "Volunteers and Interns",
+          link: "/volunteer-and-interns"
         }]
         // dropdown: ["Volunteers and Interns"]
       },
@@ -467,14 +468,14 @@ export default function Navbar(props) {
         title: "Support us",
         link: '/support-us',
         // dropdown: ["Donations", "Planned Giving"]
-        dropdown:[
+        dropdown: [
           {
-            title:"Donations",
-            link:"/support/donation"
+            title: "Donations",
+            link: "/support/donation"
           },
           {
-            title:"Planned Giving",
-            link:"/planed-giving"
+            title: "Planned Giving",
+            link: "/planed-giving"
           }
         ]
       },
@@ -484,6 +485,30 @@ export default function Navbar(props) {
         // dropdown: ["Store1", "Store2"]
       }
     ];
+
+
+    const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
+    const dropdownRefs = useRef([]);
+
+    const toggleDropdown = (index) => {
+      setOpenDropdownIndex((prev) => (prev === index ? null : index));
+    };
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (
+          openDropdownIndex !== null &&
+          dropdownRefs.current[openDropdownIndex] &&
+          !dropdownRefs.current[openDropdownIndex].contains(event.target)
+        ) {
+          setOpenDropdownIndex(null);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [openDropdownIndex]);
+
 
 
 
@@ -634,118 +659,57 @@ export default function Navbar(props) {
 
         <div className="scchs_navbar_up">
           <div className="scchs_navbar">
-            {/* <div className="scchs_logo">
-              <img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" />
-            </div> */}
             <ul className="scchs_nav_ul">
               <div className="scchs_logo">
-                <a href="/"><img src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg" alt="" /></a>
+              <a href="/"><img
+                  src="https://res.cloudinary.com/dgif730br/image/upload/v1743768420/SCCHS_Logo_vFINAL_1_1_whtysx.svg"
+                  alt="SCCHS Logo"
+                /></a>
               </div>
-              <div className="schss_parent" onClick={handleDropdownToggle} ref={dropdownRef}>
-                <li className="dev_svg">
-                  <Link href="/about-us">About us</Link>
-                  {isDropdownOpen &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>}
 
-                </li>
-                {isDropdownOpen &&
-                  <div className="test_drop">
-                    <a href="/history-of-scchs"><div><p>History of SCCHS</p></div></a>
-                    <a href="/history-of-0ur-building"><div><p>History of Our Building</p></div></a>
-                    <a href="/history-of-our-country"><div><p>History of Our County</p></div></a>
-                  </div>
-                }
-              </div>
-              <div onClick={handleDropdownToggle2} ref={dropdownRef2} className="schss_parent">
-                <li className="dev_svg">
-                  <Link href="/research-1">Research</Link>
-                  {isDropdownOpen2 &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>}
-                </li>
-                {isDropdownOpen2 &&
-                  <div className="test_drop">
-                    <a href="/workshop-buttons"><div><p>Workshop Handouts</p></div></a>
-                    <a href="/extrnal-research-links"><div><p>External Research Site Links</p></div></a>
-                    <a href="/cemetry-virtual-tour"><div><p>The TNT Story: Cemeteries</p></div></a>
-                  </div>
-                }
-              </div>
-              <div onClick={handleDropdownToggle3} ref={dropdownRef3} className="schss_parent">
-                <li className="dev_svg">
-                  <Link href="/join-us">join us</Link>
-                  {isDropdownOpen3 &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>
-                  }
-                </li>
-                {
-                  isDropdownOpen3 &&
-                  <div className="test_drop">
-                    <div><p>Membership Information</p></div>
-                    <a href="/join/register1"><div><p>Online Join</p></div></a>
-                  </div>
-                }
-              </div>
-              <div onClick={handleDropdownToggle4} ref={dropdownRef4} className="schss_parent">
-                <li className="dev_svg">
-                  <a>get involved</a>
-                  {isDropdownOpen4 &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>
-                  }
-                </li>
-                {isDropdownOpen4 &&
-                  <div className="test_drop">
-                    <a href="/volunteer-and-interns"><div><p>Volunteers and Interns</p></div></a>
-                  </div>
-                }
-              </div>
-              <div onClick={handleDropdownToggle5} ref={dropdownRef5} className="schss_parent">
-                <li className="dev_svg">
-                  <Link href="/support-us">support us</Link>
-                  {isDropdownOpen5 &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>
-                  }
-                </li>
-                {
-                  isDropdownOpen5 &&
-                  <div className="test_drop">
-                   <a href="/support/donation"><div><p>Donations</p></div></a>
-                    <div><p>Planned Giving</p></div>
-                  </div>
-                }
-              </div>
-              <li><Link href="/event">events</Link></li>
-              <div onClick={handleDropdownToggle6} ref={dropdownRef6} className="schss_parent">
-                <li className="dev_svg">
-                  <Link href={"/store"}>store</Link>
-                  {/* {isDropdownOpen6 &&
-                    <svg width="10" height="6" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z" fill="#292929" />
-                    </svg>
-                  } */}
-                </li>
-                {/* {isDropdownOpen6 &&
-                  <div className="test_drop">
-                    <div><p>store1</p></div>
-                    <div><p>store2</p></div>
-                  </div>
-                } */}
-              </div>
+              {navbarItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="schss_parent"
+                  onClick={() => toggleDropdown(index)}
+                  ref={(el) => (dropdownRefs.current[index] = el)}
+                >
+                  <li className="dev_svg">
+                    <Link href={item?.parentItems?.link}>{item?.parentItems?.title}</Link>
+                    {item.subItems?.length != 0 && openDropdownIndex === index && (
+                      <svg
+                        width="10"
+                        height="6"
+                        viewBox="0 0 13 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.66016 7.19531L0.328125 1.89062C0.0820312 1.61719 0.0820312 1.20703 0.328125 0.960938L0.957031 0.332031C1.20312 0.0859375 1.61328 0.0859375 1.88672 0.332031L6.125 4.54297L10.3359 0.332031C10.6094 0.0859375 11.0195 0.0859375 11.2656 0.332031L11.8945 0.960938C12.1406 1.20703 12.1406 1.61719 11.8945 1.89062L6.5625 7.19531C6.31641 7.44141 5.90625 7.44141 5.66016 7.19531Z"
+                          fill="#292929"
+                        />
+                      </svg>
+                    )}
+                  </li>
+
+                  {openDropdownIndex === index && (
+                    <div className="test_drop">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <div key={subIndex}>
+                          <a href={subItem?.link}><p>{subItem?.title}</p></a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
               <li className="test_sign">
-                <Link href="/member/memberlogin"><button>SIGN in</button></Link>
+                <Link href="/member/memberlogin"><button>SIGN IN</button></Link>
               </li>
             </ul>
-          </div >
-        </div >
+          </div>
+        </div>
 
         {/* ==========mobile========== */}
         <div className="navbar-wrapper" ref={navRef}>
@@ -845,7 +809,7 @@ export default function Navbar(props) {
             </div>
 
             {/* ===========lower nav======= */}
-            {navItems.map((item, index) => (
+            {navItemss.map((item, index) => (
               <li
                 key={index}
                 className="nav-item"

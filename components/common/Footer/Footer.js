@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 
 export default function Footer(footerProps) {
+  const [data, setData] = useState({});
   if (typeof footerProps.footerProps == "undefined" || footerProps.footerProps == false) { return ""; }
   else {
 
@@ -17,6 +18,29 @@ export default function Footer(footerProps) {
       footerItems = JSON.parse(JSON.parse(footerData?.items));
       console.log(footerItems);
     }
+
+    const fetchFooter = async () => {
+      try {
+        const resp = await fetch("https://admin.kmiroofing.com/api/footer", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+
+        });
+
+        const formdata = await resp.json();
+        console.log(formdata);
+        setData(formdata?.data);
+        console.log(data);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    useEffect(() => {
+      fetchFooter();
+    }, [])
 
     const itemsSetting = {
       "--footerBCColor": footerData?.background_color,
@@ -54,38 +78,8 @@ export default function Footer(footerProps) {
 
     const [sendvalue, setsetndvalue] = useState(false);
 
-    const submitForm = async (e) => {
-      e.preventDefault();
-      setsetndvalue(true);
-      // https://mailer.instacertify.com/api/v1/sendMail
-      const resp = await fetch('https://mailer.instacertify.com/api/v1/sendMail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: value.name,
-          email: value.email,
-          phone: value.phone,
-          message: value.message
-        }),
-      })
-        .then(response => response.json())
-        .then(data => alert(data.message))
-        .catch(error => console.error('Error:', error));
 
-      setValue({
-        name: "",
-        email: "",
-        phone: "",
-        message: ""
-      })
 
-      console.log("resp", resp);
-
-      setsetndvalue(false);
-
-    }
 
 
 
@@ -98,19 +92,21 @@ export default function Footer(footerProps) {
         >
           <div className="footer-top">
             <div className="container amrgin-left10px">
-            {/* row */}
+              {/* row */}
               <div className="rwing ">
 
                 <div className="rwing1">
                   <div className="widget widget_getintuch" height="240px">
                     <div className='foot_logs'>
-                      <img src='https://res.cloudinary.com/dgif730br/image/upload/v1743836030/SCCHS_Logo_vFINAL_1_1_1_valuvw.svg' alt='hh' />
+                      {/* https://res.cloudinary.com/dgif730br/image/upload/v1743836030/SCCHS_Logo_vFINAL_1_1_1_valuvw.svg */}
+                      <img src={data?.footer_logo} alt='hh' />
                     </div>
 
                     <div className='footer_para'>
-                      <p>
-                        The St. Charles County Historical Society (SCCHS) is a 501(c)(3) nonprofit organization focused on preserving the history and genealogy of St. Charles County.
-                      </p>
+
+                      <div dangerouslySetInnerHTML={{ __html: data?.sub_title }} />
+                      {/* The St. Charles County Historical Society (SCCHS) is a 501(c)(3) nonprofit organization focused on preserving the history and genealogy of St. Charles County. */}
+
                     </div>
                     {/* <h4 className="footer-title kl_title">Contact Us</h4>
 
@@ -173,24 +169,18 @@ export default function Footer(footerProps) {
                   </div>
                 </div>
 
+                {
+                  // <p>{data?.footer_1}</p>
+                }
 
 
 
-                {/* footerItems?.length > 0 &&
-                  footerItems?.map((footer, index) => ( */}
-                <div className="rwing2">
+                {/* <div className="rwing2">
                   <div className="widget ">
                     <h4 className="footer-title">Join Us</h4>
 
                     <ul className="list-2 font-opensans lopl">
-                      {/* <marquee
-                              behavior="static"
-                              direction="up"
-                              scrollamount={2}
-                              height="260px"
-                              onmouseover={() => { this.behavior = "static" }}
-                              onmouseout={() => { this.behavior = "scroll" }}
-                            > */}
+                     
 
                       <li>
                         <a>Membership Information</a>
@@ -199,7 +189,7 @@ export default function Footer(footerProps) {
                         <a>Online join</a>
                       </li>
 
-                      {/* </marquee> */}
+                    
                     </ul>
 
 
@@ -213,41 +203,17 @@ export default function Footer(footerProps) {
                     <h4 className="footer-title">Get Involved</h4>
 
                     <ul className="list-2 font-opensans lopl">
-                      {/* <marquee
-                              behavior="static"
-                              direction="up"
-                              scrollamount={2}
-                              height="260px"
-                              onmouseover={() => { this.behavior = "static" }}
-                              onmouseout={() => { this.behavior = "scroll" }}
-                            > */}
-
                       <li>
                         <a>Volunteers and Interns</a>
                       </li>
 
-                      {/* </marquee> */}
                     </ul>
-
-
-
-
-
-
-
                   </div>
                   <div className="widget ">
                     <h4 className="footer-title">Support Us</h4>
 
                     <ul className="list-2 font-opensans lopl">
-                      {/* <marquee
-                              behavior="static"
-                              direction="up"
-                              scrollamount={2}
-                              height="260px"
-                              onmouseover={() => { this.behavior = "static" }}
-                              onmouseout={() => { this.behavior = "scroll" }}
-                            > */}
+                     
 
                       <li>
                         <a>Planned Giving</a>
@@ -256,7 +222,7 @@ export default function Footer(footerProps) {
                         <a>Contribute Now</a>
                       </li>
 
-                      {/* </marquee> */}
+                    
                     </ul>
 
 
@@ -267,22 +233,19 @@ export default function Footer(footerProps) {
 
                   </div>
 
-                </div>
+                </div> */}
 
-                <div className="rwing2">
+                {
+                  <div className='editor-content' dangerouslySetInnerHTML={{ __html: data?.footer_1 }} />
+                }
+
+
+
+                {/* <div className="rwing2">
                   <div className="widget ">
                     <h4 className="footer-title">Archives Hours</h4>
 
                     <ul className="list-2 font-opensans lopl lopl1">
-                      {/* <marquee
-                              behavior="static"
-                              direction="up"
-                              scrollamount={2}
-                              height="260px"
-                              onmouseover={() => { this.behavior = "static" }}
-                              onmouseout={() => { this.behavior = "scroll" }}
-                            > */}
-
                       <li>
                         <a>Monday : <span>10:00 </span> AM  to <span>3:00 </span> PM  </a>
                         <p>Open</p>
@@ -302,44 +265,49 @@ export default function Footer(footerProps) {
                         <p className='closed'>Closed</p>
                       </li>
 
-
-
-
-                      {/* </marquee> */}
                     </ul>
                     <div className='archieve_text'>
                       <p>We are open on <span>Saturdays</span>  for research by appointment only take off “until further notice”</p>
                     </div>
 
                   </div>
-                </div>
+                </div> */}
 
-                <div className="rwing3 margin-top25">
+                {
+                  <div className='editor-content editor-content1' dangerouslySetInnerHTML={{ __html: data?.footer_2 }} />
+                }
+
+                {/* <div className="rwing3 margin-top25">
 
                   <div className="widget">
                     <h4 className="footer-title">Contact</h4>
 
                     <ul className="list-2 font-opensans lopl">
                       <li>
-                       <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839733/Mask_group_d396h5.svg' alt=''/>
+                        <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839733/Mask_group_d396h5.svg' alt='' />
 
-                        <a>Old Market House <br/>
-                        St. Charles County Historical <br/> Society <br/> 101 South Main StreetSt. <br/>  Charles, Missouri 63301</a>
+                        <a>Old Market House <br />
+                          St. Charles County Historical <br /> Society <br /> 101 South Main StreetSt. <br />  Charles, Missouri 63301</a>
                       </li>
                       <li>
-                       <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839732/Mask_group_1_v0jifu.svg' alt=''/>
+                        <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839732/Mask_group_1_v0jifu.svg' alt='' />
 
                         <a>(636) 946-9828</a>
                       </li>
                       <li>
-                       <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839733/Group_1171281377_cwmljq.svg' alt=''/>
+                        <img width="22" height="22" src='https://res.cloudinary.com/dgif730br/image/upload/v1743839733/Group_1171281377_cwmljq.svg' alt='' />
 
                         <a>Contact@scchs.org</a>
                       </li>
                     </ul>
                   </div>
 
-                </div>
+                </div> */}
+                {
+                  <div className='editor-content editor-content11' dangerouslySetInnerHTML={{ __html: data?.footer_3 }} />
+                }
+
+
 
 
               </div>
