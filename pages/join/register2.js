@@ -51,14 +51,18 @@ export default function register2(pageProp) {
             <div className="event_system_main event_system_main1">
                 <div className="event_main">
                     <div className="form_scch_btn">
-                       <h2>New Membership</h2>
-                     <Link href="/join/register1"><button>Back</button></Link>
+                        <h2>New Membership</h2>
+                        <Link href="/join/register1"><button>Back</button></Link>
                     </div>
                     <form className="nameform-container">
                         <h2>Primary Member Information</h2>
                         <div className="nameform-group nams_group">
 
-                            <input className="nameform-input" type="text" placeholder="First Name" />
+                            <input className="nameform-input" type="text" placeholder="Prefix" />
+                        </div>
+                        <div className="nameform-group">
+
+                            <input className="nameform-input" type="text" placeholder="First Name*" />
                         </div>
 
                         <div className="nameform-group">
@@ -90,7 +94,7 @@ export default function register2(pageProp) {
                         </div>
 
                         <div className="nameform-group">
-                            
+
                             <select className="nameform-input">
                                 <option value="">Suffix</option>
                                 <option value="Jr.">Jr.</option>
@@ -119,7 +123,7 @@ export default function register2(pageProp) {
                         </div>
                     </form>
 
-                <Link style={{textDecoration:"none"}} href="/join/register3"><button className="scchs_hj_btn">Next</button></Link>
+                    <Link style={{ textDecoration: "none" }} href="/join/register3"><button className="scchs_hj_btn">Next</button></Link>
                 </div>
             </div>
 

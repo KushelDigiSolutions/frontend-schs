@@ -21,7 +21,7 @@ var settingsMorePhotos = {
 
 
 // const itemsPerPage = 10;
-export default function photodetail(pageProp) {
+export default function librarydetail(pageProp) {
 
 
 
@@ -33,7 +33,7 @@ export default function photodetail(pageProp) {
 
             <div className="event_system_main event_system_main1">
                 <div className="event_main">
-                    <div className="photo-record-container">
+                    <div className="photo-record-container photo-record-container11">
                         <div className="photo-record-header">
                             <Link href={"/photos/mainhome"}><button className="photo-record-back">Back</button></Link>
                             <div className="photo-record-actions">
@@ -43,51 +43,35 @@ export default function photodetail(pageProp) {
                         </div>
 
                         <div className="photo-record-content">
-                            <div className="photo-record-image">
-                                <img
-                                    src="https://res.cloudinary.com/dgif730br/image/upload/v1745681045/Group_1171281766_eplmhr.png" // replace with actual path
-                                    alt="Gentleman of Old Britanny"
-                                />
-                            </div>
 
                             <div className="photo_record_title">
-                                <h2 className="photo-record-title">Photo Record</h2>
                                 <div className="photo-record-table">
 
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td>Description</td>
-                                                <td>Telescope inside Grover Parker's observatory
-                                                February 1973</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Collection</td>
-                                                <td>Parker Collection</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Print size</td>
-                                                <td>3 1/2" x 3 1/2"</td>
-                                            </tr>
-                                            <tr>
                                                 <td>Title</td>
-                                                <td>Telescope inside Grover Parker's observatory February 1973</td>
+                                                <td>600.001.574</td>
                                             </tr>
                                             <tr>
-                                                <td>Medium</td>
-                                                <td>Color</td>
+                                                <td>Call#</td>
+                                                <td>Map</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Author</td>
+                                                <td>Educational poster of Missouri, 1821</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Summary</td>
+                                                <td>Map</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Published Date</td>
+                                                <td>1986</td>
                                             </tr>
                                             <tr>
                                                 <td>Catalog Number</td>
-                                                <td>254.1055</td>
-                                            </tr>
-                                            <tr>
-                                                <td>People</td>
-                                                <td><a href="#">Parker, Grover</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Image</td>
-                                                <td>020\2541055.jpg</td>
+                                                <td>004.608</td>
                                             </tr>
                                         </tbody>
                                     </table>

@@ -126,7 +126,16 @@ export default function register3(pageProp) {
 
                     </form>
 
-                    <Link style={{ textDecoration: "none" }} href="/join/register3"><button className="scchs_hj_btn">Next</button></Link>
+                    <div className="do_have">
+                        <div className="do_left">
+                            <p>Do you have an alternate "Seasonal" address:</p>
+                            <select>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <Link style={{ textDecoration: "none" }} href="/join/register3"><button className="scchs_hj_btn thhy">Next</button></Link>
+                    </div>
                 </div>
             </div>
 
