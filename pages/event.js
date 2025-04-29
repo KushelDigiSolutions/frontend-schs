@@ -224,7 +224,9 @@ export default function events(pageProp) {
             <HeadSEO1 />
 
             <div className="event_system_main">
+
                 <div className="event_main">
+                    
                     <div className="filters-container">
                         <div>
                             <div className="filters-left">
@@ -269,6 +271,8 @@ export default function events(pageProp) {
                             </div>
                         </div>
                     </div>
+
+
                     <div className="card-grid">
                         {cards.slice(0, visibleCount).map((card, index) => (
                             <div className="event-card" key={index}>
@@ -301,6 +305,7 @@ export default function events(pageProp) {
                     }
 
                 </div>
+
             </div>
 
 
