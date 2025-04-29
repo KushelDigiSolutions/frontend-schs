@@ -211,7 +211,13 @@ export default function eventdetail(pageProp) {
                                         <h3>Payment in advance is greatly appreciated, table hosts are responsible <br/> for ensuring full payment at or prior to event</h3>
                                     </div>
                                     <div className="payment_right">
+                                       <button>Purchase Tickets</button>
+                                    </div>
+                                    <div className="payment_right">
                                        <button>Download</button>
+                                    </div>
+                                    <div className="payment_right">
+                                       <button>Reserve Seats</button>
                                     </div>
                                 </div>
                             </div>

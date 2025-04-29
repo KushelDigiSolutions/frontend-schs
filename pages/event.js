@@ -272,9 +272,9 @@ export default function events(pageProp) {
                         </div>
                     </div>
 
-
+                    {/* slice(0, visibleCount) */}
                     <div className="card-grid">
-                        {cards.slice(0, visibleCount).map((card, index) => (
+                        {cards.map((card, index) => (
                             <div className="event-card" key={index}>
                                 <div className="card-header">
                                     <span>{card.date}</span>
@@ -291,7 +291,7 @@ export default function events(pageProp) {
                             </div>
                         ))}
                     </div>
-                    {
+                    {/* {
                         visibleCount < cards.length && (
                             <div className="load-more-wrapper">
                                 <button onClick={handleLoadMore} className="load-more-btn">
@@ -302,7 +302,7 @@ export default function events(pageProp) {
                                 </button>
                             </div>
                         )
-                    }
+                    } */}
 
                 </div>
 

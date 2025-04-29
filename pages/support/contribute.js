@@ -48,9 +48,9 @@ console.log(records);
 const itemsPerPage = 10;
 export default function contribute(pageProp) {
 
-    const [contribute,setContribute] = useState(false);
+    const [contribute, setContribute] = useState(false);
 
-    const handleContribute = () =>{
+    const handleContribute = () => {
         const filterContribute = setContribute(Math.random());
         const assignMember = setContribute(filterContribute);
         console.log(assignMember);
@@ -112,8 +112,49 @@ export default function contribute(pageProp) {
                                 <div className="donation-label">Donor Comments:</div>
                                 <div className="donation-separator">:</div>
                                 <div className="donation-value">
-                                    I would like to make this donation anonymously. Please do not publish my name.
+                                    Hello
                                 </div>
+                            </div>
+
+                            <hr className="donation-divider" />
+
+                            <div className="donation-grid donation-anonymous">
+                                <div className="donation-label">Address</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                    36 Shadowridge Drive
+                                </div>
+                                <div className="donation-label">Address 2</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                    false
+                                </div>
+                                <div className="donation-label">City</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                    St Peters
+                                </div>
+                                <div className="donation-label">State / Province</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                MO
+                                </div>
+                                <div className="donation-label">Postal Code</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                63376
+                                </div>
+                                <div className="donation-label">Country</div>
+                                <div className="donation-separator">:</div>
+                                <div className="donation-value">
+                                United States
+                                </div>
+                            </div>
+
+                            <hr className="donation-divider" />
+                            <div className="donation-checkbox">
+                                <input type="checkbox"/>
+                                <p>I am not a robot</p>
                             </div>
                         </div>
                     </div>

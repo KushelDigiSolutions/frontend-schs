@@ -53,6 +53,10 @@ export default function store(pageProp) {
             <HeadSEO1 />
 
             <div className="event_system_main">
+                <div className="store_heading">
+                   <h2>SCCHS Store</h2>
+                   <p>Members must be logged-in to receive a 10% or greater discount on items in the bookstore. The discount does not apply to events. If you are not a member and would like information about becoming one <Link href="/member/memberlogin"><span>CLICK HERE</span></Link></p>
+                </div>
                 <div className="event_main">
                     <div className="filters-container">
                         <div className="filters111">

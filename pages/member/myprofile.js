@@ -141,7 +141,7 @@ export default function myprofile(pageProp) {
                                 </div>
 
                                 <div className="card card11">
-                                    <h2 className="section-title">Receive Email :</h2>
+                                    <h2 className="section-title">Receive Email Now :</h2>
                                     <div className="grid-2col grid-2col11">
                                         <div><strong className="lable1">General Notices :</strong> Yes <span className="edit-icon edit-icon1"><img width={24} height={24} src="https://res.cloudinary.com/dgif730br/image/upload/v1744636032/Mask_group_gzjnak.png" alt="" /></span></div>
                                         <div><strong className="lable1">Event Reminders :</strong> Yes</div>

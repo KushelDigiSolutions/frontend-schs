@@ -19,9 +19,9 @@ var settingsMorePhotos = {
 
 const plans = [
     { name: 'Individual', for: 'person(s)person(s)', members: '1', fee: '$30.00', description: 'See JOIN US > Member Benefits section.' },
-    { name: 'Individual - Facebook Group Member', for: 'person(s)', members: '1', fee: '$25.00', description: 'See JOIN US > Member Benefits section' },
+    // { name: 'Individual - Facebook Group Member', for: 'person(s)', members: '1', fee: '$25.00', description: 'See JOIN US > Member Benefits section' },
     { name: 'Family', for: 'person(s)', members: '2', fee: '$45.00', description: 'See JOIN US > Member Benefits section.' },
-    { name: 'Family - Facebook Group Member', for: 'person(s)', members: '2', fee: '$40.00', description: 'See JOIN US > Member Benefits section' },
+    // { name: 'Family - Facebook Group Member', for: 'person(s)', members: '2', fee: '$40.00', description: 'See JOIN US > Member Benefits section' },
     { name: 'Blanchette', for: 'person(s)', members: '2', fee: '$100.00', description: 'See JOIN US > Member Benefits section.' },
     { name: 'DuSable', for: 'person(s)', members: '2', fee: '$175.00', description: 'See JOIN US > Member Benefits section.' },
     { name: 'Boone', for: 'person(s)', members: '2', fee: '$250.00', description: 'See JOIN US > Member Benefits section.' },
@@ -109,7 +109,7 @@ export default function register1(pageProp) {
                                                     <th className="nh1">For</th>
                                                     <th>Maximum Associated Members</th>
                                                     <th>Annual Fee</th>
-                                                    <th>Description</th>
+                                                    {/* <th>Description</th> */}
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -123,9 +123,9 @@ export default function register1(pageProp) {
                                                         <td>
                                                             {item?.fee}
                                                         </td>
-                                                        <td>
+                                                        {/* <td>
                                                             {item?.description}
-                                                        </td>
+                                                        </td> */}
                                                     </tr>
                                                 ))}
 

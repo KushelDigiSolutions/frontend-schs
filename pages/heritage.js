@@ -10,14 +10,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 // 1. Define your dates first
 const dates = [
-  'December 2024','September 2024','September 2016','June 2024','June 2020','June 2016',
-  'February 2024','March 2020','March 2016','November 2023','December 2019','December 2015',
-  'August 2023','September 2019','September 2015','June 2023','June 2019','June 2015',
-  'March 2023','March 2019','March 2015','December 2022','December 2018','November 2014',
-  'September 2022','September 2018','September 2014','June 2022','June 2018','June 2014',
-  'March 2022','March 2018','March 2014','December 2021','December 2017','October 2013',
-  'September 2021','September 2017','December 2012','June 2021','June 2017','September 2012',
-  'March 2021','March 2017','June 2012','December 2020','December 2016','March 2012'
+  'December 2024', 'September 2024', 'September 2016', 'June 2024', 'June 2020', 'June 2016',
+  'February 2024', 'March 2020', 'March 2016', 'November 2023', 'December 2019', 'December 2015',
+  'August 2023', 'September 2019', 'September 2015', 'June 2023', 'June 2019', 'June 2015',
+  'March 2023', 'March 2019', 'March 2015', 'December 2022', 'December 2018', 'November 2014',
+  'September 2022', 'September 2018', 'September 2014', 'June 2022', 'June 2018', 'June 2014',
+  'March 2022', 'March 2018', 'March 2014', 'December 2021', 'December 2017', 'October 2013',
+  'September 2021', 'September 2017', 'December 2012', 'June 2021', 'June 2017', 'September 2012',
+  'March 2021', 'March 2017', 'June 2012', 'December 2020', 'December 2016', 'March 2012'
 ];
 
 // 2. Compute the split point
@@ -34,51 +34,59 @@ export default function DatePage({ navbar, footer }) {
       <HeadSEO1 />
 
       <div className="event_system_main event_system_main1">
-      <section className="date-grid-section">
-    
-  {/* Header always on top, centered */}
-  <h1 className="current-issues">Membership Newsletter</h1>
-  <h2 className="current-issue">
-    Current Issue:&nbsp;
-    <span>December 2024</span>
-  </h2>
+        <section className="date-grid-section">
 
-  <div className="filters-right">
-                            <div className="listing">
-                                <label>Listing Per Page</label>
-                                <div className="custom_drop custom_drop1">
-                                    <select className="dropdown small">
-                                        <option>50</option>
+          {/* Header always on top, centered */}
+          <h1 className="current-issues">Membership Newsletter</h1>
+          <h2 className="current-issue">
+            Current Issue:&nbsp;
+            <span>December 2024</span>
+          </h2>
+          
+          <div className="filters-container">
+                        <div>
+                            <div className="filters-left">
+                                <div className="custom_drop">
+                                    <select className="dropdown dropdwon_11">
+                                        <option>Year</option>
                                     </select>
                                 </div>
-                            </div>
 
-
-                            <div className="listing">
-                                <label>Jump to Page</label>
-                                <div className="custom_drop custom_drop1">
-                                    <select className="dropdown small">
-                                        <option>50</option>
+                                <div className="custom_drop">
+                                    <select className="dropdown dropdwon_11">
+                                        <option>Month</option>
                                     </select>
                                 </div>
-                            </div>
 
+                            </div>
+                          
                         </div>
 
-  {/* Grid content below */}
-  <div className="date-grid-wrapper">
-    <div className="date-col">
-      {firstHalf.map(d => (
-        <button key={d} className="date-button">{d}</button>
-      ))}
-    </div>
-    <div className="date-col">
-      {secondHalf.map(d => (
-        <button key={d} className="date-button">{d}</button>
-      ))}
-    </div>
-  </div>
-</section>
+                        <div className="filters-right">
+                            <div className="listing">
+                                <div className="custom_drop custom_drop1">
+                                    <select className="dropdown small dropdwon_11">
+                                        <option>Past Newsletter</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+          {/* Grid content below */}
+          <div className="date-grid-wrapper">
+            <div className="date-col">
+              {firstHalf.map(d => (
+                <button key={d} className="date-button">{d}</button>
+              ))}
+            </div>
+            <div className="date-col">
+              {secondHalf.map(d => (
+                <button key={d} className="date-button">{d}</button>
+              ))}
+            </div>
+          </div>
+        </section>
 
       </div>
     </div>

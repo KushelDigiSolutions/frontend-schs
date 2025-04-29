@@ -19,54 +19,74 @@ var settingsMorePhotos = {
 
 const records = [
     {
-        title: "Index Vol 4-42 (Sorted by Author)",
-        description: "1986 - 2024 Sorted by Author",
-        // recordType: "Archive",
-        Uploaded: "16 October 2024",
-        buttonText: "View Index",
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
         imagePlaceholder: true,
     },
     {
-        title: "Index Vol 4-42 (Sorted by Subject)",
-        description: "1986 - 2024 Sorted by Subject",
-        Uploaded: "16 October 2024",
-        // recordType: "Archive",
-        buttonText: "View Index",
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
         imagePlaceholder: true,
     },
     {
-        title: "Index Vol 4-42 (Sorted by Title)",
-        description: "1986 - 2024 Sorted by Title",
-        Uploaded: "16 October 2024",
-        // recordType: "Archive",
-        buttonText: "View Index",
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
         imagePlaceholder: true,
     },
     {
-        title: "Index Vol 4-42 (Sorted by Vol & No)",
-        description: "1986 - 2024 Sorted by Vol & No.",
-        Uploaded: "16 October 2024",
-        // recordType: "Archive",
-        buttonText: "View Index",
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
         imagePlaceholder: true,
     },
     {
-        title: "Index Vol 4-8",
-        description: "1986-1990, 14 pages, 2 MB. A five-year cumulative index covering volumes 4-8 by Author, Title and Subject.",
-        // recordType: "Archive",
-        Uploaded: "16 October 2024",
-        buttonText: "View Index",
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
         imagePlaceholder: true,
     },
-
-
-
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    },
+    {
+        title: "600.001.587 - Map",
+        description: "Map of Missouri counties",
+        recordType: "Archive",
+        buttonText: "Know More",
+        imagePlaceholder: true,
+    }
 ];
 
 const itemsPerPage = 3;
 export default function archieve(pageProp) {
 
-    const [currentPage, setCurrentPage] = useState(1);
+ const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(records.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -85,32 +105,8 @@ export default function archieve(pageProp) {
             <HeadSEO1 />
 
             <div className="event_system_main event_system_main1">
-
-                <div className="ks-header-bar">
-                    <div className="ks-header-left">
-                        <h2 className="ks-title">INDEX</h2>
-                        <div className="filters-right">
-                        <div className="listing">
-                            <label>Listing Per Page</label>
-                            <div className="custom_drop custom_drop1">
-                                <select className="dropdown small small1">
-                                    <option>50</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="record-info">
-                            Records : <span>1 to 4 of </span> 4
-                        </div>
-                        </div>
-                    </div>
-
-                    <button className="ks-back-button">Back</button>
-                </div>
-
-
-
-                {/* <div className="ks-search-bar">
-                    <h2 className="ks-title">Keyword Search</h2>
+                <div className="ks-search-bar">
+                    <h2 className="ks-title">About Our Holding</h2>
                     <div className="ks-input-group">
                         <input className="ks-input" type="text" placeholder="Enter Search Criteria Here" />
                         <button className="ks-search-button">
@@ -130,9 +126,9 @@ export default function archieve(pageProp) {
                     <p className="ks-result-count">
                         <strong>3627</strong> Results found. Records searched: <strong>3627</strong>
                     </p>
-                </div> */}
-                <div className="event_main" id="eventt-mont">
-                    <div className="ks-page" id="ktt-page">
+                </div>
+                <div className="event_main">
+                    <div className="ks-page">
                         {
                             currentItems.map((item, idx) => {
                                 return (
@@ -140,7 +136,7 @@ export default function archieve(pageProp) {
                                         <div className="ks-result-text">
                                             <h3 className="ks-result-title">{item?.title}</h3>
                                             <p className="ks-result-desc">{item?.description}</p>
-                                            <p className="ks-record-type"><strong> Uploaded:</strong>{item?.Uploaded}</p>
+                                            <p className="ks-record-type"><strong>Record Type:</strong>{item?.recordType}</p>
                                             <button className="ks-more-button">{item?.buttonText}</button>
                                         </div>
                                         <div className="ks-result-image-placeholder">{item?.imagePlaceholder}</div>
@@ -167,7 +163,7 @@ export default function archieve(pageProp) {
                             onClick={() => handleClick(currentPage + 1)}
                             disabled={currentPage === totalPages}
                         >
-                            <span>Next</span>
+                           <span>Next</span> 
                             <svg width="6" height="12" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.13115 0.5L0.368652 2.2625L6.09365 8L0.368652 13.7375L2.13115 15.5L9.63115 8L2.13115 0.5Z" fill="#666D76" />
                             </svg>
