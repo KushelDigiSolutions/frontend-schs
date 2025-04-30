@@ -9588,17 +9588,19 @@ label {
   display: flex;
   gap: 10px;
 }
+/* today changes */
 .kss-more-button {
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(171, 6, 53, 1);
+  border: 1px solid #00315C;
   background: white;
-  color: rgba(171, 6, 53, 1) !important;
+  color: #00315C !important;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
   margin-top: 0.5rem;
   font-family: "Euclid-Medium";
 }
+/* =========== */
 
 .kss-more-button:hover {
   background-color: rgba(171, 6, 53, 1) !important;
@@ -9677,7 +9679,8 @@ label {
 }
 
 .date-button:hover {
-  background: rgba(253, 96, 93, 0.05);
+  background: rgba(171, 6, 53, 1);
+  color: #fff;
 }
 
 
@@ -9686,14 +9689,14 @@ label {
 @media (max-width: 1339px) {
   .date-grid-wrapper {
  
-    padding: 0 20px;
+    /* padding: 0 20px; */
   
   }
 }
 @media (max-width: 1224px) {
   .date-grid-wrapper {
     flex-direction: column;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     gap: 40px;
   }
 }
@@ -9702,7 +9705,7 @@ label {
 @media (max-width: 768px) {
   .date-grid-wrapper {
     align-items: center;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     gap: 32px;
   }
 }
