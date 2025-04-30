@@ -320,7 +320,7 @@ export default function archieve(pageProp) {
                                                         <button className="ks-more-button">{item?.buttonText}</button>
                                                     }
                                                     {item?.buttonText1 &&
-                                                        <button className="ks-more-button">{item?.buttonText1}</button>
+                                                        <button className="kss-more-button">{item?.buttonText1}</button>
                                                     }
 
                                                     {/* <button className="ks-more-button">{item?.buttonText}</button>

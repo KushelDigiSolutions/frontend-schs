@@ -27,73 +27,7 @@ var settingsMorePhotos = {
     slidesToScroll: 1
 };
 
-const cards = [
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
 
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    {
-        date: "March 29, 2025",
-        time: "10am - 7pm",
-        title: "ROCK N ROLL BINGO",
-        image: "https://res.cloudinary.com/dgif730br/image/upload/v1744273279/1740627457_bingo_d7m6tj.png", // use your actual image
-        description: `ROCK 'N' ROLL BINGO Presented By The Saint Charles County Historical Society SATURDAY, MARCH 29, 2025 - DOORS OPEN AT 6:00PM, EVENT STARTS AT 7:00PM $200 PER TABLE OF 8 OR $25 PER PERSON Free Soda And Water, BYO`
-    },
-    // repeat for other cards
-];
 
 const ITEMS_PER_PAGE = 3;
 
@@ -201,26 +135,26 @@ export default function eventdetail(pageProp) {
                             <div className="event_payment">
                                 <h3>Payment can be made by check or phone with a credit card. Make checks payable to SCCHS</h3>
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
                 <div className="payment_advance">
-                                <div className="payment_advance_flex">
-                                    <div className="payment_left">
-                                        <h3>Payment in advance is greatly appreciated, table hosts are responsible <br/> for ensuring full payment at or prior to event</h3>
-                                    </div>
-                                    <div className="payment_right">
-                                       <button>Purchase Tickets</button>
-                                    </div>
-                                    <div className="payment_right">
-                                       <button>Download</button>
-                                    </div>
-                                    <div className="payment_right">
-                                       <button>Reserve Seats</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="payment_advance_flex">
+                        <div className="payment_left">
+                            <h3>Payment in advance is greatly appreciated, table hosts are responsible <br /> for ensuring full payment at or prior to event</h3>
+                        </div>
+                        <div className="payment_right">
+                            <button>Purchase Tickets</button>
+                        </div>
+                        <div className="payment_right">
+                            <button>Download</button>
+                        </div>
+                        <div className="payment_right">
+                            <button>Reserve Seats</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 

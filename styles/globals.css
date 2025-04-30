@@ -7214,6 +7214,17 @@ th {
   margin-top: 0.5rem;
   font-family: "Euclid-Medium";
 }
+.kss-more-button {
+  padding: 0.5rem 1rem;
+  border: #000;
+  background: white;
+  color: #000;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-family: "Euclid-Medium";
+}
 
 .ks-more-button:hover {
   background-color: rgba(171, 6, 53, 1);
