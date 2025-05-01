@@ -2,9 +2,9 @@
 const nextConfig = {
   env: {
     NEXTAUTH_SECRET:"Instacertify",
-    NEXTAUTH_URL:"https://front.kmiroofing.com/",
+    NEXTAUTH_URL:"https://scchs.co.in/",
     next:{
-      api_url:"https://front.kmiroofing.com/api/v1/"
+      api_url:"https://scchs.co.in/api/v1/"
     },
     // "proxy": "https://admin.instacertify.com",
     server : {
